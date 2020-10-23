@@ -1,0 +1,14 @@
+<div class="rectangle">
+  <div class="center">
+    <p class="readerId">Måler Navn</p>
+    <p class="readerId">Sidste Mål</p>
+    <p class="readerId">Firma</p>
+    <br />
+    <form (submit)="sendData(reader.value)">
+      <input required='' type='text' #reader>
+      <label alt='Indtast mål på måleren' placeholder='Mål'></label>
+    </form>
+    <a (click)="sendData(reader.value)" class="btn btn-white btn-animation-1">Send</a>
+  </div>
+  <a (click)="redirectBack()" class="btn btn-white btn-animation-1">Gå Tilbage</a>
+</div>
