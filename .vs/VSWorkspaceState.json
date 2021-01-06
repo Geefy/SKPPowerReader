@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\e2e",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\clicked-reader",
+    "\\src\\app\\reader-controller",
+    "\\src\\app\\water-reader",
+    "\\src\\assets"
+  ],
+  "SelectedNode": "\\src\\app\\water-reader\\water-reader.component.html",
+  "PreviewInSolutionExplorer": false
+}

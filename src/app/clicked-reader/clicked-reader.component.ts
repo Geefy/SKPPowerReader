@@ -25,6 +25,6 @@ export class ClickedReaderComponent implements OnInit {
 
 
   redirectBack() {
-    this.router.navigateByUrl('/controller');
+    this.router.navigateByUrl('');
   }
 }

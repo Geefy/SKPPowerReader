@@ -1,14 +1,16 @@
 export class Reader {
   name: string;
-  readerCategory: string;
-  company: string;
+  placement: string;
   lastReading: string;
-  serialNumber: string;
-  constructor(name: string, readerCategory: string, company: string, lastReading: string, serialNumber: string) {
+  readerUnit: string;
+  date: string;
+  readerNumber: string;
+  constructor(name: string, placement: string, readerUnit: string, lastReading: string, date: string, readerNumber: string) {
     this.name = name;
-    this.readerCategory = readerCategory;
-    this.company = company;
+    this.placement = placement;
+    this.readerUnit = readerUnit;
     this.lastReading = lastReading;
-    this.serialNumber = serialNumber;
+    this.date = date;
+    this.readerNumber = readerNumber;
   }
 }
