@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
-
 import { AppComponent } from './app.component';
 import { WaterReaderComponent } from './water-reader/water-reader.component';
 import { ReaderControllerComponent } from './reader-controller/reader-controller.component';
@@ -21,7 +20,7 @@ import { ClickedReaderComponent } from './clicked-reader/clicked-reader.componen
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot([]),
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

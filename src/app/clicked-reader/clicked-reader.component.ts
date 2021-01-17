@@ -1,21 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute, ParamMap } from '@angular/router'
+import { BetterReader } from '../BetterReader';
+import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-clicked-reader',
   templateUrl: './clicked-reader.component.html',
   styleUrls: ['./clicked-reader.component.css']
 })
 export class ClickedReaderComponent implements OnInit {
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  public betterReader: BetterReader;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) {
   }
 
-  sendData(readerValue: string) {
+  ngOnInit(): void {
+    this.betterReader = history.state;
+  }
+
+  sendData(readerValue: string, readerNumber: string) {
     if (readerValue != '') {
-      if (confirm("Er du sikker du vil gemme " + readerValue)) {
-        window.alert(readerValue + " blev gemt")
+      if (confirm("Er du sikker du vil gemme målet: " + readerValue)) {
+        this.apiService.updateReader(readerValue, readerNumber);
         this.redirectBack();
       }
     }

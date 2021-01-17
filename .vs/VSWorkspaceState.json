@@ -6,9 +6,10 @@
     "\\src\\app",
     "\\src\\app\\clicked-reader",
     "\\src\\app\\reader-controller",
+    "\\src\\app\\services",
     "\\src\\app\\water-reader",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\water-reader\\water-reader.component.html",
+  "SelectedNode": "\\src\\app\\clicked-reader\\clicked-reader.component.ts",
   "PreviewInSolutionExplorer": false
 }

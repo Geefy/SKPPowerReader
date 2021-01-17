@@ -1,5 +1,5 @@
-<div *ngFor="let a of fakeArray">
-  <app-water-reader>
+<div *ngFor="let a of readers">
+  <app-water-reader [reader]="a">
 
   </app-water-reader>
 </div>

@@ -6,7 +6,7 @@ import { ClickedReaderComponent } from '../app/clicked-reader/clicked-reader.com
 
 const routes: Routes = [
   { path: '', component: ReaderControllerComponent },
-  { path: 'clicked', component: ClickedReaderComponent }
+  { path: 'clicked', component: ClickedReaderComponent}
 ];
 
 @NgModule({
