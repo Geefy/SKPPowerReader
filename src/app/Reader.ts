@@ -1,12 +1,12 @@
 export class Reader {
-  name: string;
+  readerName: string;
   placement: string;
   lastReading: string;
   readerUnit: string;
   date: string;
   readerNumber: string;
-  constructor(name: string, placement: string, readerUnit: string, lastReading: string, date: string, readerNumber: string) {
-    this.name = name;
+  constructor(readerName: string, placement: string, readerUnit: string, lastReading: string, date: string, readerNumber: string) {
+    this.readerName = readerName;
     this.placement = placement;
     this.readerUnit = readerUnit;
     this.lastReading = lastReading;

@@ -16,10 +16,10 @@ export class ClickedReaderComponent implements OnInit {
     this.betterReader = history.state;
   }
 
-  sendData(readerValue: string, readerNumber: string) {
+  sendData(readerValue: string) {
     if (readerValue != '') {
       if (confirm("Er du sikker du vil gemme målet: " + readerValue)) {
-        this.apiService.updateReader(readerValue, readerNumber);
+        this.apiService.updateReader(readerValue, this.betterReader.readerNumber);
         this.redirectBack();
       }
     }

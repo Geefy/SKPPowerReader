@@ -11,7 +11,7 @@ export class ReaderControllerComponent implements OnInit {
   constructor(private readerApi: ApiService) { }
   public readers;
   ngOnInit(): void {
-    this.readers = this.readerApi.getReadersTest();
+    this.readerApi.getReaders().subscribe(req => this.readers = req);
   }
 
 }
