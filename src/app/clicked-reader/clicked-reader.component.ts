@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 import { BetterReader } from '../BetterReader';
+import { ReaderDTO } from '../ReaderDTO';
 import { ApiService } from '../services/api.service';
 @Component({
   selector: 'app-clicked-reader',
@@ -9,18 +10,22 @@ import { ApiService } from '../services/api.service';
 })
 export class ClickedReaderComponent implements OnInit {
   public betterReader: BetterReader;
+  public readerDTO: ReaderDTO;
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) {
   }
 
   ngOnInit(): void {
     this.betterReader = history.state;
+    this.readerDTO = new ReaderDTO(this.betterReader.readerNumber, this.betterReader.reading);
   }
 
   sendData(readerValue: string) {
     if (readerValue != '') {
-      if (confirm("Er du sikker du vil gemme målet: " + readerValue)) {
-        this.apiService.updateReader(readerValue, this.betterReader.readerNumber);
-        this.redirectBack();
+      if (confirm("Er du sikker på du vil gemme målet: " + readerValue + " " + this.betterReader.readerUnit)) {
+        console.log(readerValue);
+        this.readerDTO.reading = readerValue;
+        this.readerDTO.readerNumber = this.betterReader.readerNumber;
+        this.apiService.updateReader(this.readerDTO).subscribe(() => this.redirectBack());
       }
     }
     else
