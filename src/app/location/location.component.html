@@ -1,0 +1,8 @@
+<div *ngFor="let a of locations">
+  <div class="rectangle">
+    <p class="locationName">{{a.locationName}}</p>
+    <a (click)="redirectClick()" class="btn btn-white btn-animation-1">Klik for at se målere under {{a.locationName}}</a>
+  </div>
+  <br />
+
+</div>

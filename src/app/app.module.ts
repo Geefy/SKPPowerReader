@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { WaterReaderComponent } from './water-reader/water-reader.component';
 import { ReaderControllerComponent } from './reader-controller/reader-controller.component';
 import { ClickedReaderComponent } from './clicked-reader/clicked-reader.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WaterReaderComponent,
     ReaderControllerComponent,
-    ClickedReaderComponent
+    ClickedReaderComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,

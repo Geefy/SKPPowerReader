@@ -9,9 +9,11 @@ import { Reader } from '../Reader';
 })
 export class ReaderControllerComponent implements OnInit {
   constructor(private readerApi: ApiService) { }
+  public location;
   public readers;
   ngOnInit(): void {
-    this.readerApi.getReaders().subscribe(req => this.readers = req);
+    this.location = history.state;
+    this.readerApi.getReadersByLocation(this.location.locationName).subscribe(req => this.readers = req);
   }
 
 }

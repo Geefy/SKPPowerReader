@@ -3,9 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { ReaderControllerComponent } from '../app/reader-controller/reader-controller.component';
 import { ClickedReaderComponent } from '../app/clicked-reader/clicked-reader.component';
+import { LocationComponent } from './location/location.component';
 
 const routes: Routes = [
-  { path: '', component: ReaderControllerComponent },
+  { path: '', component: LocationComponent },
+  { path: 'readers', component: ReaderControllerComponent },
   { path: 'clicked', component: ClickedReaderComponent}
 ];
 
