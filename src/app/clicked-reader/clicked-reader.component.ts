@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 import { BetterReader } from '../BetterReader';
 import { ReaderDTO } from '../ReaderDTO';
 import { ApiService } from '../services/api.service';
-import { Location } from '@angular/common';
+import { LocationObj} from '../Location'
 @Component({
   selector: 'app-clicked-reader',
   templateUrl: './clicked-reader.component.html',
@@ -12,11 +12,13 @@ import { Location } from '@angular/common';
 export class ClickedReaderComponent implements OnInit {
   public betterReader: BetterReader;
   public readerDTO: ReaderDTO;
-  constructor(private _location: Location, private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) {
+  public locationSave: LocationObj;
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) {
   }
 
   ngOnInit(): void {
     this.betterReader = history.state;
+    this.locationSave = new LocationObj(this.betterReader.location);
     this.readerDTO = new ReaderDTO(this.betterReader.readerNumber, this.betterReader.reading);
   }
 
@@ -35,6 +37,7 @@ export class ClickedReaderComponent implements OnInit {
 
 
   redirectBack() {
-    this._location.back();
+    console.log(this.betterReader);
+    this.router.navigateByUrl('/readers', { state: this.locationSave });
   }
 }

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Reader } from '../Reader';
 import { ReaderDTO } from '../ReaderDTO';
-import { Location } from '../Location';
+import { LocationObj } from '../Location';
 import { catchError, retry } from 'rxjs/operators';
 
 const httpOptions = {

@@ -9,6 +9,7 @@ import { WaterReaderComponent } from './water-reader/water-reader.component';
 import { ReaderControllerComponent } from './reader-controller/reader-controller.component';
 import { ClickedReaderComponent } from './clicked-reader/clicked-reader.component';
 import { LocationComponent } from './location/location.component';
+import { LocationControllerComponent } from './location-controller/location-controller.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LocationComponent } from './location/location.component';
     WaterReaderComponent,
     ReaderControllerComponent,
     ClickedReaderComponent,
-    LocationComponent
+    LocationComponent,
+    LocationControllerComponent
   ],
   imports: [
     BrowserModule,
