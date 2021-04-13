@@ -25,7 +25,6 @@ export class ClickedReaderComponent implements OnInit {
   sendData(readerValue: string) {
     if (readerValue != '') {
       if (confirm("Er du sikker på du vil gemme målet: " + readerValue + " " + this.betterReader.readerUnit)) {
-        console.log(readerValue);
         this.readerDTO.reading = readerValue;
         this.readerDTO.readerNumber = this.betterReader.readerNumber;
         this.apiService.updateReader(this.readerDTO).subscribe(() => this.redirectBack());
@@ -37,7 +36,6 @@ export class ClickedReaderComponent implements OnInit {
 
 
   redirectBack() {
-    console.log(this.betterReader);
     this.router.navigateByUrl('/readers', { state: this.locationSave });
   }
 }
