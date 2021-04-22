@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Reader } from '../Reader';
-import { ReaderDTO } from '../ReaderDTO';
+import { ReaderUpdateDTO } from '../ReaderDTO';
 import { LocationObj } from '../Location';
 import { catchError, retry } from 'rxjs/operators';
 
@@ -26,9 +26,11 @@ export class ApiService {
   getReadersByLocation(locationName: string): Observable<Reader[]> {
     return this.http.get<Reader[]>(this.readerUrl + locationName);
   }
-  updateReader(readerDTO: ReaderDTO): Observable<any> {
-    console.log(readerDTO);
+  updateReader(readerDTO: ReaderUpdateDTO): Observable<any> {
     return this.http.put(this.readerUrl, readerDTO, httpOptions);
+  }
+  createReader(reader: Reader): Observable<any> {
+    return this.http.post(this.readerUrl, reader, httpOptions);
   }
   getLocation() {
     return this.http.get<Location[]>(this.locationUrl);

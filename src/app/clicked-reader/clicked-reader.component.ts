@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 import { BetterReader } from '../BetterReader';
-import { ReaderDTO } from '../ReaderDTO';
+import { ReaderUpdateDTO } from '../ReaderDTO';
 import { ApiService } from '../services/api.service';
 import { LocationObj} from '../Location'
 @Component({
@@ -11,7 +11,7 @@ import { LocationObj} from '../Location'
 })
 export class ClickedReaderComponent implements OnInit {
   public betterReader: BetterReader;
-  public readerDTO: ReaderDTO;
+  public readerDTO: ReaderUpdateDTO;
   public locationSave: LocationObj;
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private apiService: ApiService) {
   }
@@ -19,7 +19,7 @@ export class ClickedReaderComponent implements OnInit {
   ngOnInit(): void {
     this.betterReader = history.state;
     this.locationSave = new LocationObj(this.betterReader.location);
-    this.readerDTO = new ReaderDTO(this.betterReader.readerNumber, this.betterReader.reading);
+    this.readerDTO = new ReaderUpdateDTO(this.betterReader.readerNumber, this.betterReader.reading);
   }
 
   sendData(readerValue: string) {

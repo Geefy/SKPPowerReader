@@ -1,4 +1,4 @@
-export class ReaderDTO {
+export class ReaderUpdateDTO {
   readerNumber: string;
   reading: string;
 

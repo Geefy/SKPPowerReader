@@ -10,6 +10,8 @@ import { ReaderControllerComponent } from './reader-controller/reader-controller
 import { ClickedReaderComponent } from './clicked-reader/clicked-reader.component';
 import { LocationComponent } from './location/location.component';
 import { LocationControllerComponent } from './location-controller/location-controller.component';
+import * as echarts from 'echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { LocationControllerComponent } from './location-controller/location-cont
   ],
   imports: [
     BrowserModule,
+    NgxEchartsModule.forRoot({ echarts }),
     AppRoutingModule,
     RouterModule.forRoot([]),
     HttpClientModule,
