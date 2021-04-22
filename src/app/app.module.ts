@@ -26,7 +26,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
     BrowserModule,
     NgxEchartsModule.forRoot({ echarts }),
     AppRoutingModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([], { relativeLinkResolution: 'legacy' }),
     HttpClientModule,
   ],
   providers: [],

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { WaterReaderComponent } from './water-reader.component';
 
@@ -6,7 +6,7 @@ describe('WaterReaderComponent', () => {
   let component: WaterReaderComponent;
   let fixture: ComponentFixture<WaterReaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ WaterReaderComponent ]
     })
