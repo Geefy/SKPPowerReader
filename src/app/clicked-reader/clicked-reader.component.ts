@@ -3,7 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 import { BetterReader } from '../BetterReader';
 import { ReaderUpdateDTO } from '../ReaderDTO';
 import { ApiService } from '../services/api.service';
-import { LocationObj} from '../Location'
+import { LocationObj } from '../Location'
 @Component({
   selector: 'app-clicked-reader',
   templateUrl: './clicked-reader.component.html',
@@ -24,14 +24,20 @@ export class ClickedReaderComponent implements OnInit {
 
   sendData(readerValue: string) {
     if (readerValue != '') {
-      if (confirm("Er du sikker på du vil gemme målet: " + readerValue + " " + this.betterReader.readerUnit)) {
-        this.readerDTO.reading = readerValue;
-        this.readerDTO.readerNumber = this.betterReader.readerNumber;
-        this.apiService.updateReader(this.readerDTO).subscribe(() => this.redirectBack());
+      if (readerValue.match("[0-9]+")) {
+
+        if (confirm("Er du sikker på du vil gemme aflæsningen: " + readerValue + " " + this.betterReader.readerUnit)) {
+          this.readerDTO.reading = readerValue;
+          this.readerDTO.readerNumber = this.betterReader.readerNumber;
+          this.apiService.updateReader(this.readerDTO).subscribe(() => this.redirectBack());
+        }
+      }
+      else {
+        window.alert("Opdatering af aflæsning fejlede.\nÅrsag: Aflæsnings data feltet indeholder bogstaver")
       }
     }
     else
-      window.alert("Måler data feltet er tomt")
+      window.alert("Opdatering af aflæsning fejlede.\nÅrsag: Aflæsnings data feltet er tomt")
   }
 
 

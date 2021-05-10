@@ -14,7 +14,6 @@ export class ReaderControllerComponent implements OnInit {
   public readers;
   ngOnInit(): void {
     this.location = history.state;
-      console.log(this.location);
       this.readerApi.getReadersByLocation(this.location.locationName).subscribe(req => this.readers = req);
   }
   redirectBack() {

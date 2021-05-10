@@ -12,6 +12,10 @@ import { LocationComponent } from './location/location.component';
 import { LocationControllerComponent } from './location-controller/location-controller.component';
 import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
+import { StatisticControllerComponent } from './statistic-controller/statistic-controller.component';
+import { StatisticComponent } from './statistic/statistic.component';
+import { ClickedStatsComponent } from './clicked-stats/clicked-stats.component';
+import { FilterPipePipe } from './filter-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { NgxEchartsModule } from 'ngx-echarts';
     ReaderControllerComponent,
     ClickedReaderComponent,
     LocationComponent,
-    LocationControllerComponent
+    LocationControllerComponent,
+    StatisticControllerComponent,
+    StatisticComponent,
+    ClickedStatsComponent,
+    FilterPipePipe
   ],
   imports: [
     BrowserModule,
