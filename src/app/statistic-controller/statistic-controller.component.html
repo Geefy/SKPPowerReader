@@ -1,6 +1,6 @@
 <div *ngFor="let loc of locations">
   <p>{{loc.locationName}}</p>
-  <div *ngFor="let read of (readers | filterPipe: loc.locationName)">
+  <div *ngFor="let read of (readers | filterPipe: loc.locationName : 'location')">
     <app-statistic [reader]="read">
 
     </app-statistic>
