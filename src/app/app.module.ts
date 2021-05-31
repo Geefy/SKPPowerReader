@@ -13,7 +13,6 @@ import { LocationControllerComponent } from './location-controller/location-cont
 import * as echarts from 'echarts';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { StatisticControllerComponent } from './statistic-controller/statistic-controller.component';
-import { StatisticComponent } from './statistic/statistic.component';
 import { ClickedStatsComponent } from './clicked-stats/clicked-stats.component';
 import { FilterPipePipe } from './filter-pipe.pipe';
 
@@ -26,7 +25,6 @@ import { FilterPipePipe } from './filter-pipe.pipe';
     LocationComponent,
     LocationControllerComponent,
     StatisticControllerComponent,
-    StatisticComponent,
     ClickedStatsComponent,
     FilterPipePipe
   ],

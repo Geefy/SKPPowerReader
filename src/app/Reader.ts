@@ -15,4 +15,7 @@ export class Reader {
     this.readerNumber = readerNumber;
     this.location = location;
   }
+  getDate(): Date{
+    return new Date(this.date);
+  }
 }

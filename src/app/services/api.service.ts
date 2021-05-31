@@ -17,6 +17,7 @@ const httpOptions = {
 })
 export class ApiService {
   private readerUrl = 'https://localhost:44397/api/Reader/';
+  private readerHistoryUrl = 'https://localhost:44397/api/Reader/history/'
   private locationUrl = 'https://localhost:44397/api/Location';
   constructor(private http: HttpClient) {
   }
@@ -34,5 +35,8 @@ export class ApiService {
   }
   getLocation() {
     return this.http.get<Location[]>(this.locationUrl);
+  }
+  getReaderHistory(reader: Reader): Observable<any> {
+    return this.http.get<Reader[]>(this.readerHistoryUrl + reader.readerNumber)
   }
 }

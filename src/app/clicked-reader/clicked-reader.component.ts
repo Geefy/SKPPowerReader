@@ -24,16 +24,14 @@ export class ClickedReaderComponent implements OnInit {
 
   sendData(readerValue: string) {
     if (readerValue != '') {
-      if (readerValue.match("[0-9]+")) {
-
-        if (confirm("Er du sikker på du vil gemme aflæsningen: " + readerValue + " " + this.betterReader.readerUnit)) {
-          this.readerDTO.reading = readerValue;
-          this.readerDTO.readerNumber = this.betterReader.readerNumber;
-          this.apiService.updateReader(this.readerDTO).subscribe(() => this.redirectBack());
-        }
+      let updateValue = '';
+      for (var i = 0; i < readerValue.match(/[0-9]+/g).length; i++) {
+        updateValue += readerValue.match(/[0-9]+/g)[i].toString();
       }
-      else {
-        window.alert("Opdatering af aflæsning fejlede.\nÅrsag: Aflæsnings data feltet indeholder bogstaver")
+      if (confirm("Er du sikker på du vil gemme aflæsningen: " + updateValue + " " + this.betterReader.readerUnit)) {
+        this.readerDTO.reading = updateValue;
+        this.readerDTO.readerNumber = this.betterReader.readerNumber;
+        this.apiService.updateReader(this.readerDTO).subscribe(() => this.redirectBack());
       }
     }
     else
